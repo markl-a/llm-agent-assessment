@@ -1,0 +1,11 @@
+# ------------------------------------------------------------------
+# 企業 HR 制度問答 RAG Agent — 相依套件
+# ------------------------------------------------------------------
+# 本專案的 LLM / Embedding 呼叫皆走共用 provider 抽象層（part2/common），
+# 全部走 OpenAI 相容 API：LLM=Groq（llama-3.3-70b-versatile）、Embedding=Mistral（mistral-embed）。
+
+# OpenAI 官方 SDK：共用 provider 層以此呼叫各家 OpenAI 相容端點（Groq / Mistral）。
+openai>=1.30
+
+# 從 .env 讀取環境變數（金鑰不寫死於程式）。
+python-dotenv>=1.0

@@ -1,0 +1,17 @@
+# LLM / Embedding 走共用 provider 抽象層（part2/common），OpenAI 相容 SDK。
+# 預設 LLM=Groq（llama-3.3-70b-versatile）、Embedding=Mistral（mistral-embed）。
+openai>=1.30.0
+
+# 從 .env 載入環境變數（金鑰一律走環境變數）
+python-dotenv>=1.0.0
+
+# 免金鑰網路搜尋（DuckDuckGo）。舊版名稱為 duckduckgo-search，本專案用新版 ddgs。
+ddgs>=6.0.0
+
+# 網頁抓取
+requests>=2.31.0
+
+# 正文擷取：beautifulsoup4（擇一即可）。若另裝 trafilatura 會優先使用、擷取品質更好。
+beautifulsoup4>=4.12.0
+# 選用：更佳的正文擷取（缺少時自動退回 BeautifulSoup）
+# trafilatura>=1.8.0

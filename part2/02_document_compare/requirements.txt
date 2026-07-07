@@ -1,0 +1,12 @@
+# --- 核心相依 ---
+# LLM / Embedding 皆走 part2/common/（OpenAI 相容抽象層，預設 Groq + Mistral）。
+openai>=1.40             # common 層用的 OpenAI 相容 client（Groq / Mistral / … 皆走此 SDK）
+pydantic>=2.0            # Structured Output schema（PairDiff / SectionSummary）與驗證
+numpy>=1.24             # 向量正規化與 block-wise 相似度
+python-dotenv>=1.0       # 載入 .env（金鑰一律走環境變數）
+
+# --- PDF 解析（讀 .pdf 時才需要；純用 .md/.txt demo 可免裝）---
+# pdfplumber>=0.11       # 版面較準；純文字可改用 pypdf 更快
+
+# --- 大規模向量檢索（選配）---
+# faiss-cpu              # 僅在 USE_FAISS=1 做大規模 top-k 檢索時才需自行安裝

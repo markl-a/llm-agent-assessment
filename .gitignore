@@ -1,0 +1,67 @@
+# ---- Secrets / credentials (絕不進版控) ----
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credentials.json
+service_account*.json
+client_secret*.json
+token.json
+*-service-account.json
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+.installed.cfg
+*.egg
+
+# ---- Virtual environments ----
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# ---- Vector store / caches / runtime artifacts ----
+*.faiss
+*.index
+.chroma/
+chroma_db/
+.cache/
+cache/
+*.sqlite3
+research_cache/
+fetch_cache/
+
+# ---- Local survey backups (避免外洩受訪者資料) ----
+survey_backup*.json
+survey_backup*.csv
+responses_local*.json
+
+# ---- Generated reports ----
+output/
+reports/
+*.local.md
+
+# ---- Test / coverage ----
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

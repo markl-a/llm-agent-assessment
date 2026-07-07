@@ -1,0 +1,14 @@
+# LLM / Embedding 呼叫走 part2/common 共用抽象層（OpenAI 相容），因此核心相依只需 openai SDK。
+# 供應商靠環境變數切換，預設 LLM=Groq（llama-3.3-70b-versatile）、Embedding=Mistral（mistral-embed）。
+openai>=1.30.0
+
+# 選擇題「結構化輸出」的 schema 驗證：LLM 回傳 JSON 後，於程式端用 pydantic 再驗一次。
+pydantic>=2.0
+
+# 從 .env 載入環境變數（選用；未安裝時仍可直接以系統環境變數執行）。
+python-dotenv>=1.0.0
+
+# Google Sheets 寫入（選用）：只有在提供 service account 憑證（GOOGLE_SERVICE_ACCOUNT_FILE）時才會用到；
+# 未提供憑證或未安裝這兩個套件時，資料 sink 會自動降級為本地 CSV（responses_local.csv）。
+gspread>=6.0.0
+google-auth>=2.30.0
